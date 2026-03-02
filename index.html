@@ -177,7 +177,8 @@
         }
     }
 
-    /* For mobile responsiveness */
+
+/* For mobile responsiveness */
     @media (max-width: 768px) {
         /* Adjust height for mobile with smaller header */
         .slider-container {
@@ -185,15 +186,25 @@
         }
 
         .slide-title {
-            font-size: 2rem;
+            font-size: 2rem;  /* Decrease font size on mobile */
         }
 
         .slide-description {
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* Decrease description size on mobile */
+        }
+
+        /* Adjust margins and padding for mobile screens */
+        .slide-content {
+            left: 5%; /* Bring content closer to the left side on mobile */
+            bottom: 15%;
+        }
+
+        .swiper-button-next, 
+        .swiper-button-prev {
+            font-size: 1.5rem;  /* Smaller navigation buttons */
+            padding: 8px;  /* Adjust button padding for mobile */
         }
     }
-
-
 /*    Testimonial    */
 
 .testimonial-slider {
