@@ -284,140 +284,80 @@
   </div> -->
  
   <!-- Slider Container -->
-<div class="slider-container">
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-                <img src="s2.JPG" alt="Nature" class="slider-image">
-                <div class="slide-content">
-                    <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
-                    <p class="slide-description">Expert Advice, Peace of mind.</p>
+    <div class="slider-container">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <img src="s2.JPG" alt="Nature" style="width: 98%; height: 50%;">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
+                        <p class="slide-description">Expert Advice, Peace of mind.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-                <img src="s1.JPG" alt="City" class="slider-image">
-                <div class="slide-content">
-                    <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
-                    <p class="slide-description">Expert Advice, Peace of mind.</p>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <img src="s1.JPG" alt="City" style="width: 98%; height: 50%;">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
+                        <p class="slide-description">Expert Advice, Peace of mind.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-                <img src="slide1.1.jpg"  alt="Technology" class="slider-image">
-                <div class="slide-content">
-                    <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
-                    <p class="slide-description">Expert Advice, Peace of mind.</p>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <img src="slide1.1.jpg"  alt="Technology" style="width: 98%; height: 50%;">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
+                        <p class="slide-description">Expert Advice, Peace of mind.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Slide 4 -->
-            <div class="swiper-slide">
-                <img src="slide1.JPG" alt="Ocean" class="slider-image">
-                <div class="slide-content">
-                    <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
-                    <p class="slide-description">Expert Advice, Peace of mind.</p>
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <img src="slide1.JPG" alt="Ocean" style="width: 98%; height: 50%;">
+                    <div class="slide-content">
+                        <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
+                        <p class="slide-description">Expert Advice, Peace of mind.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 </div>
 
-<!-- Include Swiper JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            effect: "fade", // Change effect here: "slide", "fade", "cube", "coverflow", "flip"
+            fadeEffect: {
+                crossFade: true
+            },
+        });
 
-<script>
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 10,
-        loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        effect: "fade", // Change effect here: "slide", "fade", "cube", "coverflow", "flip"
-        fadeEffect: {
-            crossFade: true
-        },
-    });
-
-    // Change text animation on slide change
-    swiper.on('slideChangeTransitionStart', function () {
-        let currentSlide = document.querySelector('.swiper-slide-active .slide-content');
-        if (currentSlide) {
-            currentSlide.style.animation = 'fadeInUp 1.5s ease-in-out';
-        }
-    });
-</script>
-
-<!-- Custom CSS for Responsive Slider -->
-<style>
-    .slider-container {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-    }
-
-    .swiper {
-        width: 100%;
-        height: 100%;
-    }
-
-    .swiper-slide {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
-
-    .slider-image {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-
-    .slide-content {
-        position: absolute;
-        bottom: 20%;
-        left: 10%;
-        color: white;
-        text-align: left;
-        animation: fadeInUp 1.5s ease-in-out;
-    }
-
-    .slide-title {
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
-
-    .slide-description {
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-
-    /* For mobile devices */
-    @media (max-width: 768px) {
-        .slide-title {
-            font-size: 1.5rem;
-        }
-
-        .slide-description {
-            font-size: 0.9rem;
-        }
-    }
-</style>
+        // Change text animation on slide change
+        swiper.on('slideChangeTransitionStart', function () {
+            let currentSlide = document.querySelector('.swiper-slide-active .slide-content');
+            if (currentSlide) {
+                currentSlide.style.animation = 'fadeInUp 1.5s ease-in-out';
+            }
+        });
+    </script>
    
 
 <!-- Service 9 - Bootstrap Brain Component -->
