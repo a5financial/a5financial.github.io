@@ -556,6 +556,7 @@ var swiper = new Swiper(".mySwiper", {
 
 <!-- Interactive Slider CSS -->
 <style>
+/* Slider Image */
 .slider-image {
     width: 100%;
     height: 500px;
@@ -564,9 +565,10 @@ var swiper = new Swiper(".mySwiper", {
 }
 
 .swiper-slide-active .slider-image {
-    transform: scale(1.05); /* subtle zoom on active slide */
+    transform: scale(1.05);
 }
 
+/* Slide Content */
 .slide-content {
     position: absolute;
     top: 50%;
@@ -583,6 +585,7 @@ var swiper = new Swiper(".mySwiper", {
     transform: translate(-50%, -50%) translateY(0);
 }
 
+/* Slide Text */
 .slide-title {
     font-size: 2.5rem;
     font-weight: bold;
@@ -595,6 +598,7 @@ var swiper = new Swiper(".mySwiper", {
     text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
+/* Navigation */
 .swiper-button-next, .swiper-button-prev {
     color: #fff;
     transition: transform 0.3s ease;
@@ -604,12 +608,30 @@ var swiper = new Swiper(".mySwiper", {
     transform: scale(1.2);
 }
 
+/* Pagination */
 .swiper-pagination-bullet {
     background: rgba(255, 255, 255, 0.7);
 }
 
 .swiper-pagination-bullet-active {
     background: #fff;
+}
+
+/* ======= MOBILE RESPONSIVE FIX ======= */
+@media (max-width: 768px) {
+    .slider-image {
+        height: 300px; /* reduce slider height on mobile */
+    }
+    .slide-title {
+        font-size: 1.8rem; /* smaller font for mobile */
+    }
+    .slide-description {
+        font-size: 1rem; /* smaller font for mobile */
+        padding: 0 10px; /* add padding so text doesn’t touch edges */
+    }
+    .slide-content {
+        top: 45%; /* slightly higher to fit better */
+    }
 }
 </style>
 
