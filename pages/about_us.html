@@ -187,9 +187,14 @@
     <h1 class="display-4 mb-4 hero-title">Welcome to A5 Financial Ltd.</h1>
     <p class="lead mb-4 hero-text">Your security is our priority. We make insurance easy to understand, cost effective, and designed around your life.</p>
   </div>
-  <!-- Meet our Founder -->
+
+  <!-- Meet Our Founder -->
   <div class="container founder-section py-5">
-    <h2>Meet Our Founder, Paramjeet (Param) Kaur Brar</h2>
+    <!-- Interactive Heading -->
+    <h2 class="founder-title text-center mb-5">
+      Meet Our Founder, <span class="highlight-text">Paramjeet (Param) Kaur Brar</span>
+    </h2>
+
     <div class="row align-items-center justify-content-center">
       <!-- Founder Picture -->
       <div class="col-md-4 mb-3 text-center founder-img-wrapper">
@@ -205,12 +210,50 @@
     </div>
 
     <!-- Our Mission -->
-    <div class="mission-section mt-5">
+    <div class="mission-section mt-5 text-center">
       <h2 class="mission-title mb-3">Our Mission</h2>
-      <p class="lead mission-text mx-auto">At A5 Financial Ltd., we aim to provide insurance seekers with the most suitable options, including life insurance, whole life insurance, critical illness insurance, term insurance, and disability insurance. We partner with all major insurance providers in Canada to deliver comprehensive and competitive solutions.</p>
+      <p class="lead mission-text mx-auto" style="max-width: 800px;">At A5 Financial Ltd., we aim to provide insurance seekers with the most suitable options, including life insurance, whole life insurance, critical illness insurance, term insurance, and disability insurance. We partner with all major insurance providers in Canada to deliver comprehensive and competitive solutions.</p>
     </div>
   </div>
 </section>
+
+<!-- Add this CSS -->
+<style>
+/* Interactive Founder Heading */
+.founder-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.founder-title::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    background: #007BFF; /* underline color */
+    transition: width 0.4s ease;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.founder-title:hover::after {
+    width: 100%; /* underline animates on hover */
+}
+
+.highlight-text {
+    color: #007BFF;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.founder-title:hover .highlight-text {
+    color: #0056b3;
+    transform: scale(1.05); /* slight zoom for interaction */
+}
+</style>
 
 <!-- Areas of Specialties Section -->
 <section class="specialties-section text-center py-5 bg-white">
