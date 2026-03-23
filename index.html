@@ -647,13 +647,13 @@ var swiper = new Swiper(".mySwiper", {
 
 
 <section class="hero-section text-center py-5" style="background: linear-gradient(135deg, #007BFF, #00C6FF); color: #fff;">
-  <div class="container py-5 hero-content">
-    <h1 class="display-4 fw-bold mb-4 pop-up">Welcome to A5 Financial Ltd.</h1>
-    <p class="lead mb-4 pop-up delay-1" style="max-width: 800px; margin: 0 auto; text-align: justify; line-height: 1.7;">
+  <div class="container py-5">
+    <h1 class="display-4 fw-bold mb-4 scroll-pop">Welcome to A5 Financial Ltd.</h1>
+    <p class="lead mb-4 scroll-pop" style="max-width: 800px; margin: 0 auto; text-align: justify; line-height: 1.7;">
       At A5 Financial Ltd., your security is our priority. We make insurance easy to understand, cost effective, and designed around your life. Proudly serving clients across Canada, we help families, individuals, and businesses choose the right protection with confidence.<br><br>
       Whether it’s life insurance, disability coverage, Super Visa insurance, or travel protection, our goal is simple: safeguard your financial future and provide peace of mind when it matters most.
     </p>
-    <a href="#mission" class="btn btn-light btn-lg shadow-lg mt-3 rounded-pill pop-up delay-2">Learn More About Us</a>
+    <a href="#mission" class="btn btn-light btn-lg shadow-lg mt-3 rounded-pill scroll-pop">Learn More About Us</a>
   </div>
 </section>
 
@@ -682,7 +682,35 @@ var swiper = new Swiper(".mySwiper", {
 .pop-up.delay-2 {
   animation-delay: 0.6s;
 }
+.scroll-pop {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-pop.show {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollElements = document.querySelectorAll('.scroll-pop');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // animate only once
+      }
+    });
+  }, {
+    threshold: 0.2 // 20% of element visible
+  });
+
+  scrollElements.forEach(el => observer.observe(el));
+});
+</script>
 
 <!-- Our Mission Section -->
 <!-- section id="mission" class="mission-section text-center">
