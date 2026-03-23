@@ -470,89 +470,148 @@
 </nav>
 
 
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <!-- <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div> -->
-  
-  <!-- Slider Container -->
+<!-- Slider Container -->
 <div class="slider-container">
-    <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-                <img src="s2.JPG" alt="Nature" class="slider-image">
-                <div class="slide-content">
-                    <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
-                    <p class="slide-description">Expert Advice, Peace of mind.</p>
-                </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-                <img src="s1.JPG" alt="City" class="slider-image">
-                <div class="slide-content">
-                    <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
-                    <p class="slide-description">Expert Advice, Peace of mind.</p>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-                <img src="slide1.1.jpg" alt="Technology" class="slider-image">
-                <div class="slide-content">
-                    <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
-                    <p class="slide-description">Expert Advice, Peace of mind.</p>
-                </div>
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="swiper-slide">
-                <img src="slide1.JPG" alt="Ocean" class="slider-image">
-                <div class="slide-content">
-                    <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
-                    <p class="slide-description">Expert Advice, Peace of mind.</p>
-                </div>
-            </div>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <img src="s2.JPG" alt="Nature" class="slider-image">
+        <div class="slide-content">
+          <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
+          <p class="slide-description">Expert Advice, Peace of mind.</p>
         </div>
-
-        <!-- Pagination & Navigation -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+      </div>
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <img src="s1.JPG" alt="City" class="slider-image">
+        <div class="slide-content">
+          <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
+          <p class="slide-description">Expert Advice, Peace of mind.</p>
+        </div>
+      </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <img src="slide1.1.jpg" alt="Technology" class="slider-image">
+        <div class="slide-content">
+          <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
+          <p class="slide-description">Expert Advice, Peace of mind.</p>
+        </div>
+      </div>
+      <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <img src="slide1.JPG" alt="Ocean" class="slider-image">
+        <div class="slide-content">
+          <h2 class="slide-title">Welcome to A5 Financial LTD</h2>
+          <p class="slide-description">Expert Advice, Peace of mind.</p>
+        </div>
+      </div>
     </div>
+
+    <!-- Pagination & Navigation -->
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
 </div>
 
 <!-- Include Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-
-
-   <script>
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
+<script>
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    autoplay: {
+        delay: 4000, // slightly faster
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    effect: "fade",
+    fadeEffect: {
+        crossFade: true,
+    },
+    on: {
+        slideChangeTransitionStart: function () {
+            const slides = document.querySelectorAll('.slide-content');
+            slides.forEach(slide => slide.style.opacity = 0);
         },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        effect: "fade", // Use a smooth fade transition
-        fadeEffect: {
-            crossFade: true,
-        },
-    });
+        slideChangeTransitionEnd: function () {
+            const activeSlide = document.querySelector('.swiper-slide-active .slide-content');
+            if(activeSlide){
+                activeSlide.style.opacity = 1;
+            }
+        }
+    }
+});
 </script>
+
+<!-- Interactive Slider CSS -->
+<style>
+.slider-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 1.5s ease;
+}
+
+.swiper-slide-active .slider-image {
+    transform: scale(1.05); /* subtle zoom on active slide */
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.swiper-slide-active .slide-content {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+}
+
+.slide-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.slide-description {
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    transform: scale(1.2);
+}
+
+.swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.swiper-pagination-bullet-active {
+    background: #fff;
+}
+</style>
 
 <!-- Service 9 - Bootstrap Brain Component -->
 <section class="bg-light py-3 py-md-5 py-xl-8">
