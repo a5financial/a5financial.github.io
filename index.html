@@ -736,6 +736,29 @@ document.addEventListener('DOMContentLoaded', () => {
     <a href="#contact" class="btn btn-light scroll-pop mt-3 shadow-lg rounded-pill">Contact Us</a>
   </div>
 </section>
+<style type="text/css">
+  /* Scroll pop animation */
+.scroll-pop {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-pop.show {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Button hover effect */
+.mission-section a.btn {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mission-section a.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+</style>
 
 <!-- Out Mission End -->
 
