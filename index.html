@@ -291,27 +291,95 @@
   }
   
 }
-.bg-custom-color {
-    background-color: #87CEEB; /* Light Gray background */
+/* Section Title  Product cards style*/
+.section-title {
+  font-weight: 700;
+  color: #007bff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-.bg-custom-color2 {
-    background-color: #FFE4E1; /* Light Gray background */
+
+/* Product Cards */
+.product-card .card-body {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.bg-custom-color3 {
-    background-color: #AFEEEE; /* Light Gray background */
+.product-card:hover .card-body {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.15);
 }
-.bg-custom-color4 {
-    background-color: #FFF0F5; /* Light Gray background */
+
+/* Rounded button */
+.btn-circle {
+  border-radius: 50px;
+  padding: 10px 18px;
+  transition: all 0.3s ease;
 }
-.bg-custom-color5 {
-    background-color: #F0FFF0; /* Light Gray background */
+.btn-circle:hover {
+  transform: translateY(-2px) scale(1.05);
 }
-.bg-custom-color6 {
-    background-color: #FFDAB9; /* Light Gray background */
+
+/* Gradient backgrounds for cards */
+.bg-gradient1 { background: linear-gradient(135deg, #007bff, #66b2ff);}
+.bg-gradient2 { background: linear-gradient(135deg, #28a745, #82e0aa);}
+.bg-gradient3 { background: linear-gradient(135deg, #ffc107, #ffdd7a);}
+.bg-gradient4 { background: linear-gradient(135deg, #fd7e14, #ffb766);}
+.bg-gradient5 { background: linear-gradient(135deg, #6f42c1, #a78ff0);}
+.bg-gradient6 { background: linear-gradient(135deg, #dc3545, #f28b93);}
+.bg-gradient7 { background: linear-gradient(135deg, #20c997, #6ce2c6);}
+
+/* Icons styling */
+.icon {
+  transition: transform 0.3s ease;
 }
-.bg-custom-color7 {
-    background-color: #B5EAD7; /* Light Gray background */
+.product-card:hover .icon {
+  transform: scale(1.2) rotate(10deg);
 }
+/*End product cards style*/
+
+
+
+
+<!-- Custom CSS for out mission-->
+
+/* Title styling */
+.mission-title {
+    font-family: 'Georgia', serif;
+    font-weight: 600;
+    color: #28a745; /* green for a fresh look */
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Add an underline accent using pseudo-element */
+.mission-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #28a745;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+/* Paragraph styling */
+.mission-text {
+    font-family: 'Tahoma', sans-serif;
+    font-size: 1.05rem;
+    color: #555;
+    background-color: #f0fff4; /* light green background */
+    padding: 20px 25px;
+    border-left: 5px solid #28a745; /* left accent line */
+    border-radius: 10px;
+    max-width: 750px;
+    text-align: justify;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* subtle shadow */
+}
+
+<!-- Css End for out mission -->
+
+
     </style>
   </head>
   <body>
@@ -525,46 +593,6 @@ Whether it’s life insurance, disability coverage, Super Visa insurance, or tra
   </div>
 </section>
 
-<!-- Custom CSS -->
-<style>
-/* Title styling */
-.mission-title {
-    font-family: 'Georgia', serif;
-    font-weight: 600;
-    color: #28a745; /* green for a fresh look */
-    text-transform: capitalize;
-    letter-spacing: 1px;
-    position: relative;
-    display: inline-block;
-}
-
-/* Add an underline accent using pseudo-element */
-.mission-title::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #28a745;
-    margin: 8px auto 0;
-    border-radius: 2px;
-}
-
-/* Paragraph styling */
-.mission-text {
-    font-family: 'Tahoma', sans-serif;
-    font-size: 1.05rem;
-    color: #555;
-    background-color: #f0fff4; /* light green background */
-    padding: 20px 25px;
-    border-left: 5px solid #28a745; /* left accent line */
-    border-radius: 10px;
-    max-width: 750px;
-    text-align: justify;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* subtle shadow */
-}
-</style>
-
-
 <!-- Out Mission End -->
 
 
@@ -711,51 +739,6 @@ Whether it’s life insurance, disability coverage, Super Visa insurance, or tra
   </div>
 </section>
 
-<style>
-/* Section Title */
-.section-title {
-  font-weight: 700;
-  color: #007bff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-/* Product Cards */
-.product-card .card-body {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.product-card:hover .card-body {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 30px rgba(0,0,0,0.15);
-}
-
-/* Rounded button */
-.btn-circle {
-  border-radius: 50px;
-  padding: 10px 18px;
-  transition: all 0.3s ease;
-}
-.btn-circle:hover {
-  transform: translateY(-2px) scale(1.05);
-}
-
-/* Gradient backgrounds for cards */
-.bg-gradient1 { background: linear-gradient(135deg, #007bff, #66b2ff);}
-.bg-gradient2 { background: linear-gradient(135deg, #28a745, #82e0aa);}
-.bg-gradient3 { background: linear-gradient(135deg, #ffc107, #ffdd7a);}
-.bg-gradient4 { background: linear-gradient(135deg, #fd7e14, #ffb766);}
-.bg-gradient5 { background: linear-gradient(135deg, #6f42c1, #a78ff0);}
-.bg-gradient6 { background: linear-gradient(135deg, #dc3545, #f28b93);}
-.bg-gradient7 { background: linear-gradient(135deg, #20c997, #6ce2c6);}
-
-/* Icons styling */
-.icon {
-  transition: transform 0.3s ease;
-}
-.product-card:hover .icon {
-  transform: scale(1.2) rotate(10deg);
-}
-</style>
 
 <!-- End Products -->
 
