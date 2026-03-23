@@ -693,6 +693,7 @@ var swiper = new Swiper(".mySwiper", {
   transform: scale(1) translateY(0);
 }
 </style>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const scrollElements = document.querySelectorAll('.scroll-pop');
@@ -700,17 +701,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        observer.unobserve(entry.target); // animate only once
+        entry.target.classList.add('show'); // animate in
+      } else {
+        entry.target.classList.remove('show'); // reset when scrolled out
       }
     });
   }, {
-    threshold: 0.2 // 20% of element visible
+    threshold: 0.2 // triggers when 20% visible
   });
 
   scrollElements.forEach(el => observer.observe(el));
 });
 </script>
+
 
 <!-- Our Mission Section -->
 <!-- section id="mission" class="mission-section text-center">
