@@ -182,7 +182,7 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="hero-section text-center py-5 bg-light">
+<section class="hero-section text-center py-5 bg-light" style="background: linear-gradient(135deg, #2E5399, #0078B9); color: #fff;">
   <div class="container">
     <h1 class="display-4 mb-4 hero-title">Welcome to A5 Financial Ltd.</h1>
     <p class="lead mb-4 hero-text">Your security is our priority. We make insurance easy to understand, cost effective, and designed around your life.</p>
@@ -191,7 +191,7 @@
   <!-- Meet Our Founder -->
   <div class="container founder-section py-5">
     <!-- Interactive Heading -->
-    <h2 class="founder-title text-center mb-5">
+    <h2 class="founder-title text-center mb-5 scroll-pop">
       Meet Our Founder, <span class="highlight-text">Paramjeet (Param) Kaur Brar</span>
     </h2>
 
@@ -203,19 +203,92 @@
 
       <!-- Founder Info -->
       <div class="col-md-8 founder-info">
-        <p class="lead mb-3">Param is the founder and CEO of A5 Financial Ltd., with over five years of experience in the life insurance and investment industry. She is known for her client focused approach and technical expertise, delivering trusted financial solutions to individuals, families, and businesses across Ontario.</p>
+        <p class="lead mb-3 scroll-pop">Param is the founder and CEO of A5 Financial Ltd., with over five years of experience in the life insurance and investment industry. She is known for her client focused approach and technical expertise, delivering trusted financial solutions to individuals, families, and businesses across Ontario.</p>
         <p class="lead mb-3">As a licensed paralegal and a graduate of Humber College's Life License Qualification Program (LLQP), Param has built a solid reputation by offering tailored financial services. Prior to A5 Financial Ltd., she gained valuable experience in the immigration industry, where she developed exceptional client service skills.</p>
         <p class="lead">In addition to her professional expertise, Param enjoys Gidha, Bhangra, folk music, and has a passion for numerology and Vastu, continually expanding her knowledge in these areas.</p>
       </div>
     </div>
 
     <!-- Our Mission -->
-    <div class="mission-section mt-5 text-center">
-      <h2 class="mission-title mb-3">Our Mission</h2>
-      <p class="lead mission-text mx-auto" style="max-width: 800px;">At A5 Financial Ltd., we aim to provide insurance seekers with the most suitable options, including life insurance, whole life insurance, critical illness insurance, term insurance, and disability insurance. We partner with all major insurance providers in Canada to deliver comprehensive and competitive solutions.</p>
-    </div>
+    <section id="mission" class="mission-section text-center py-5" 
+         style="background: linear-gradient(135deg, #0078B9, #2E5399); color: #fff;">
+  <div class="container py-5">
+    <h2 class="display-4 fw-bold mb-4 scroll-pop">Our Mission</h2>
+    <p class="lead mb-4 scroll-pop" style="max-width: 800px; margin: 0 auto; text-align: justify; line-height: 1.7;">
+      The primary mission of A5 Financial Ltd is to offer insurance seekers the most suitable options, including life insurance, whole life insurance, critical illness insurance, term insurance, and Disability insurance. The agency partners with all major insurance providers in Canada to deliver comprehensive and competitive solutions.
+    </p>
+   
   </div>
 </section>
+</section>
+
+
+
+
+
+
+<style>
+/* Pop-up animation */
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.pop-up {
+  opacity: 0; /* start hidden */
+  animation: popUp 0.8s forwards; /* animate to final state */
+}
+
+.pop-up.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.pop-up.delay-2 {
+  animation-delay: 0.6s;
+}
+.scroll-pop {
+  opacity: 0;
+  transform: scale(0.8) translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-pop.show {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollElements = document.querySelectorAll('.scroll-pop');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show'); // animate in
+      } else {
+        entry.target.classList.remove('show'); // reset when scrolled out
+      }
+    });
+  }, {
+    threshold: 0.2 // triggers when 20% visible
+  });
+
+  scrollElements.forEach(el => observer.observe(el));
+});
+</script>
+
+
+
+
+
+
 
 <!-- Add this CSS -->
 <style>
