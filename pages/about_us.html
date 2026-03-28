@@ -10,8 +10,14 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     
 <style type="text/css">
-      .navbar {
+       .navbar {
     box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+     display: flex;
+    gap: 15px; /* space between items */
+}
+.navbar-nav .nav-item {
+    margin-left: 10px;  /* space before each menu item */
+    margin-right: 10px; /* space after each menu item */
 }
 
 .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
@@ -63,6 +69,113 @@
       text-decoration: none;
     }
 
+
+
+
+        /* Slider Container */
+        /* Set the height of the slider container to fill remaining screen height after header */
+    .slider-container {
+        position: relative;
+        width: 100vw;  /* Full width of the viewport */
+        height: calc(100vh - 80px); /* Adjust this value based on the height of your header */
+        max-height: 100vh; /* Ensure it doesn't exceed viewport height */
+        overflow: hidden;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Each slide should take up full screen */
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        overflow: hidden;  /* Prevent slide content overflow */
+    }
+
+    /* Image styling */
+    .slider-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures the image covers the full screen area without stretching */
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* Content Styling */
+    .slide-content {
+        position: absolute;
+        bottom: 20%;
+        left: 10%;
+        color: white;
+        text-align: left;
+        z-index: 10;
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.5); /* Dark background for readability */
+        border-radius: 10px;
+        animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    .slide-title {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+    }
+
+    .slide-description {
+        font-size: 1.5rem;
+        line-height: 1.6;
+    }
+
+    /* Pagination and navigation buttons */
+    .swiper-pagination {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 15;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        z-index: 15;
+        transform: translateY(-50%);
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        font-size: 2rem;
+    }
+
+    .swiper-button-next {
+        right: 10px;
+    }
+
+    .swiper-button-prev {
+        left: 10px;
+    }
+
+    /* Animation for fade-in effect */
+    @keyframes fadeInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
 /* For mobile responsiveness */
     @media (max-width: 768px) {
         /* Adjust height for mobile with smaller header */
@@ -83,7 +196,7 @@
             left: 5%; /* Bring content closer to the left side on mobile */
             bottom: 15%;
              position: absolute;
-        border-radius: 5px;
+        border-radius: 10px;
         animation: fadeInUp 1.5s ease-in-out;
         }
 
@@ -93,6 +206,151 @@
             padding: 8px;  /* Adjust button padding for mobile */
         }
     }
+/*    Testimonial    */
+
+.testimonial-slider {
+  background-color: #0078B9;
+  padding: 3em 2em;
+}
+.testimonial-title {
+  color: #fff;
+}
+.testimonial-title h2 {
+  padding-left: 0.2em;
+}
+.card {
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+  height: 100%;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #fff;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  top: 60%;
+  transform: translateY(-50%);
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+}
+@media (min-width: 576px) {
+  .carousel-item {
+    margin-right: 0;
+    flex: 0 0 50%;
+    display: block;
+  }
+  .carousel-inner {
+    display: flex;
+  }
+}
+@media (min-width: 768px) {
+  .carousel-inner {
+    padding: 1em;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    left: 1em;
+    top: 90%;
+    opacity: 1;
+  }
+  .carousel-control-next {
+    left: 4.5em;
+  }
+  
+}
+/* Section Title  Product cards style*/
+.section-title {
+  font-weight: 700;
+  color: #007bff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Product Cards */
+.product-card .card-body {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover .card-body {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+}
+
+/* Rounded button */
+.btn-circle {
+  border-radius: 50px;
+  padding: 10px 18px;
+  transition: all 0.3s ease;
+}
+.btn-circle:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Gradient backgrounds for cards */
+.bg-gradient1 { background: linear-gradient(135deg, #0078B9, #2E5399);}
+.bg-gradient2 { background: linear-gradient(135deg, #B87333, #ffb766);}
+.bg-gradient3 { background: linear-gradient(135deg, #0078B9, #2E5399);}
+.bg-gradient4 { background: linear-gradient(135deg, #B87333, #ffb766);}
+.bg-gradient5 { background: linear-gradient(135deg, #0078B9, #2E5399);}
+.bg-gradient6 { background: linear-gradient(135deg, #B87333, #ffb766);}
+.bg-gradient7 { background: linear-gradient(135deg, #0078B9, #2E5399);}
+
+/* Icons styling */
+.icon {
+  transition: transform 0.3s ease;
+}
+.product-card:hover .icon {
+  transform: scale(1.2) rotate(10deg);
+}
+/*End product cards style*/
+
+
+
+
+<!-- Custom CSS for out mission-->
+
+/* Title styling */
+.mission-title {
+    font-family: 'Georgia', serif;
+    font-weight: 600;
+    color: #28a745; /* green for a fresh look */
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Add an underline accent using pseudo-element */
+.mission-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #28a745;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+/* Paragraph styling */
+.mission-text {
+    font-family: 'Tahoma', sans-serif;
+    font-size: 1.05rem;
+    color: #555;
+    background-color: #f0fff4; /* light green background */
+    padding: 20px 25px;
+    border-left: 5px solid #28a745; /* left accent line */
+    border-radius: 10px;
+    max-width: 750px;
+    text-align: justify;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); /* subtle shadow */
+}
+
+<!-- Css End for out mission -->
+
+
     </style>
   </head>
   <body>
