@@ -180,58 +180,129 @@
   </div>
 </div>
 </nav>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    /* Page background */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0078B9 0%, #2E5399 100%);
+      min-height: 100vh;
+      color: #fff;
+    }
 
-<div class="justify-content-center">
-  <div>
- 
-    <h1>Term Insurance.</h1>
-    <p>Term insurance (or term life insurance) is a type of life insurance that provides coverage for a specific period of time such as 10, 20, or 30/65, 100 years. If the insured person passes away during that term, their beneficiaries receive a tax-free payout. If the term expires and no claim is made, the coverage simply ends unless it is renewed or converted.</p>
-</div>
+    h1, h2 {
+      color: #ffffff;
+    }
 
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #f0f0f0;
+    }
 
+    /* Table container: transparent */
+    .table-container {
+      padding: 2rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      transition: transform 0.3s ease;
+    }
 
-<div class="container table-container">
-  <h2 class="text-center mb-4">Why Do You Need Term Insurance?</h2>
-  
-  <table class="table table-bordered table-responsive">
-    <thead class="table-header">
-      <tr>
-        <th>Reason</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Affordable Protection</td>
-        <td class="text-start">Term insurance offers high coverage at a lower cost compared to many other life insurance options.</td>
-      </tr>
-      <tr>
-        <td>Income Replacement</td>
-        <td class="text-start">Helps your family maintain their lifestyle if they lose your income.</td>
-      </tr>
-      <tr>
-        <td>Debt Protection</td>
-        <td class="text-start">Can cover major financial obligations like a mortgage, car loan, or personal debts.</td>
-      </tr>
-      <tr>
-        <td>Family Security</td>
-        <td class="text-start">Ensures your spouse and children are financially supported.</td>
-      </tr>
-      <tr>
-        <td>Ideal for Key Life Stages</td>
-        <td class="text-start">Especially important when you have young children, large debts, or significant financial responsibilities.</td>
-      </tr>
-      <tr>
-        <td>Peace of Mind</td>
-        <td class="text-start">Provides confidence that your loved ones will be financially protected during your most responsibility-heavy years.</td>
-      </tr>
-      <tr>
-        <td>In Simple Words</td>
-        <td class="text-start">Term insurance is a cost-effective way to protect your family’s financial future during the years they need you the most.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+    .table-container:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Entire table copper style */
+    .table {
+      background-color: #B87333; /* copper table background */
+      border-radius: 12px;
+      overflow: hidden;
+      color: #fff; /* white text for readability */
+    }
+
+    .table th, .table td {
+      border: 1px solid rgba(255, 255, 255, 0.3); /* subtle white border */
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .table th {
+      background-color: #B87333; /* same copper for header */
+      font-weight: 600;
+    }
+
+    .table td {
+      text-align: left;
+      padding-left: 1rem;
+    }
+
+    .table tbody tr:hover {
+      background-color: rgba(255, 255, 255, 0.2); /* subtle hover effect */
+      transition: 0.3s;
+    }
+
+    .section-fade {
+      opacity: 0;
+      animation: fadeInUp 1s forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .text-center {
+      text-align: center;
+    }
+  </style>
+<div class="container py-5">
+    <div class="text-center section-fade" style="animation-delay: 0.2s;">
+      <h1>Term Insurance</h1>
+      <p>Term insurance (or term life insurance) provides coverage for a specific period such as 10, 20, or 30/65, 100 years. If the insured person passes away during that term, their beneficiaries receive a tax-free payout. If the term expires and no claim is made, the coverage simply ends unless renewed or converted.</p>
+    </div>
+
+    <div class="table-container section-fade" style="animation-delay: 0.4s;">
+      <h2 class="text-center mb-4">Why Do You Need Term Insurance?</h2>
+      <table class="table table-bordered table-responsive">
+        <thead>
+          <tr>
+            <th>Reason</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Affordable Protection</td>
+            <td>Term insurance offers high coverage at a lower cost compared to many other life insurance options.</td>
+          </tr>
+          <tr>
+            <td>Income Replacement</td>
+            <td>Helps your family maintain their lifestyle if they lose your income.</td>
+          </tr>
+          <tr>
+            <td>Debt Protection</td>
+            <td>Can cover major financial obligations like a mortgage, car loan, or personal debts.</td>
+          </tr>
+          <tr>
+            <td>Family Security</td>
+            <td>Ensures your spouse and children are financially supported.</td>
+          </tr>
+          <tr>
+            <td>Ideal for Key Life Stages</td>
+            <td>Especially important when you have young children, large debts, or significant financial responsibilities.</td>
+          </tr>
+          <tr>
+            <td>Peace of Mind</td>
+            <td>Provides confidence that your loved ones will be financially protected during your most responsibility-heavy years.</td>
+          </tr>
+          <tr>
+            <td>In Simple Words</td>
+            <td>Term insurance is a cost-effective way to protect your family’s financial future during the years they need you the most.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
 
 
