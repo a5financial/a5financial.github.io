@@ -10,8 +10,14 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
    <style type="text/css">
-      .navbar {
+       .navbar {
     box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+     display: flex;
+    gap: 15px; /* space between items */
+}
+.navbar-nav .nav-item {
+    margin-left: 10px;  /* space before each menu item */
+    margin-right: 10px; /* space after each menu item */
 }
 
 .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
@@ -62,6 +68,8 @@
       background-color: #e2e6ea;  /* Hover effect */
       text-decoration: none;
     }
+
+
 
 /* For mobile responsiveness */
     @media (max-width: 768px) {
