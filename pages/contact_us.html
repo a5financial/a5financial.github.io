@@ -150,10 +150,10 @@
 </nav>
 
 <!-- Contact Us Section -->
-<section class="section-header">
-  <div class="container">
+<section class="section-header py-5" style="background: linear-gradient(135deg, #0078B9, #2E5399); color: #fff;">
+  <div class="container text-center">
     <h2>Contact Us</h2>
-    <p class="lead text-center">We’d love to hear from you! Whether you have a question or need assistance, feel free to reach out.</p>
+    <p class="lead">We’d love to hear from you! Whether you have a question or need assistance, feel free to reach out.</p>
   </div>
 </section>
 
@@ -161,136 +161,169 @@
 <section class="container my-5">
   <div class="row">
     <!-- Contact Details -->
-    <div class="col-md-6">
-      <h4>Our Office</h4>
-      <div class="contact-info">
+    <div class="col-md-6 mb-4">
+      <h4 style="color: #B87333;">Our Office</h4>
+      <div class="contact-info" style="color: #0078B9; font-weight: 500;">
         <p><i class="bi bi-geo-alt"></i> Unit # 20, 1625 Steeles Ave E Brampton, ON L6T 4T7</p>
         <p><i class="bi bi-telephone"></i> +1 (905) 902-8888</p>
         <p><i class="bi bi-envelope"></i> parambrar675@gmail.com</p>
       </div>
     </div>
 
-    <!-- Google Map (Optional) -->
-    <div class="col-md-6">
-      <h4>Find Us on the Map</h4>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.6210598472912!2d-79.69954772488667!3d43.697640849556954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3e7d30e69fbd%3A0xb3d3b35bf46a715!2s1625%20Steeles%20Ave%20E%20%2320%2C%20Brampton%2C%20ON%20L6T%204T7%2C%20Canada!5e0!3m2!1sen!2s!4v1772215668986!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- Google Map -->
+    <div class="col-md-6 mb-4">
+      <h4 style="color: #B87333;">Find Us on the Map</h4>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.6210598472912!2d-79.69954772488667!3d43.697640849556954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3e7d30e69fbd%3A0xb3d3b35bf46a715!2s1625%20Steeles%20Ave%20E%20%2320%2C%20Brampton%2C%20ON%20L6T%204T7%2C%20Canada!5e0!3m2!1sen!2s!4v1772215668986!5m2!1sen!2s" width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </div>
 </section>
 
 <!-- Contact Form Section -->
 <section class="container my-5">
-  <h4 class="text-center">Send Us a Message</h4>
+  <h4 class="text-center mb-4" style="color: #B87333;">Send Us a Message</h4>
   <form class="contact-form">
-    <div class="row">
+    <div class="row g-3">
       <div class="col-md-6">
-        <input type="text" class="form-control" placeholder="Full Name" required>
+        <input type="text" class="form-control form-input" placeholder="Full Name" required>
       </div>
       <div class="col-md-6">
-        <input type="email" class="form-control" placeholder="Email Address" required>
+        <input type="tel" class="form-control form-input" placeholder="Phone Number" required>
+      </div>
+      <div class="col-md-6">
+        <input type="email" class="form-control form-input" placeholder="Email Address" required>
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control form-input" placeholder="Subject" required>
       </div>
       <div class="col-md-12">
-        <input type="text" class="form-control" placeholder="Subject" required>
-      </div>
-      <div class="col-md-12">
-        <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+        <textarea class="form-control form-input" rows="5" placeholder="Your Message" required></textarea>
       </div>
       <div class="col-md-12 text-center">
-        <button type="submit" class="btn btn-primary">Send Message</button>
+        <button type="submit" class="btn btn-submit">Send Message</button>
       </div>
     </div>
   </form>
 </section>
 
+<style>
+/* Interactive form styling */
+.form-input {
+  border: 2px solid #B87333;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+  color: #fff;
+  background-color: #0078B9;
+}
+
+.form-input::placeholder {
+  color: rgba(255,255,255,0.8);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #0078B9;
+  background-color: #B87333;
+  box-shadow: 0 0 8px rgba(184,115,51,0.6);
+}
+
+.btn-submit {
+  background-color: #B87333;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #0078B9;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 120, 185, 0.5);
+}
+</style>
+
 
 <!-- Footer -->
 
 <footer>
+  <div>
+    <footer class="text-white text-center text-lg-start" style="background-color: #B87333;">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row mt-4">
 
+          <!-- About Column -->
+          <div class="col-lg-4 col-md-12 mb-4 mb-md-0 text-justify">
+            <h5 class="text-uppercase mb-4">A5 Financial Ltd.</h5>
+            <p class="mb-4 text-justify">
+              A5 Financial Ltd. stands out with unmatched support, exceeding client expectations every time. Our dedicated team of insurance professionals provides quality products and services to secure a brighter future for you, your family, and your business. Clients trust us to deliver, and we take pride in meeting their needs.
+            </p>
 
-
-<!-- Remove the container if you want to extend the Footer to full width. -->
-<div>
-
-  <footer class="text-white text-center text-lg-start bg-dark">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!--Grid row-->
-      <div class="row mt-4">
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">A5 Financial LTD</h5>
-
-          <p class="mb-4">
-           A5 Financial stands out with unmatched support, exceeding client expectations every time. Our dedicated team of insurance professionals provides quality products and services to secure a brighter future for you, your family, and your business. Clients trust us to deliver, and we take pride in meeting their needs.
-          </p>
-
-        
-
-          <div class="mt-4">
-             <h4>Social Media Links</h4>
-                <div class="social-media pt-2">
-        <a href="#" class="text-light fs-2 me-3"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="text-light fs-2 me-3"><i class="bi bi-pinterest"></i></a>
-        <a href="#" class="text-light fs-2 me-3"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="text-light fs-2"><i class="bi bi-linkedin"></i></a>
+            <div class="mt-4">
+              <h4>Social Media Links</h4>
+              <div class="social-media pt-2">
+                <a href="#" class="text-light fs-2 me-3"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-light fs-2 me-3"><i class="bi bi-tiktok"></i></a>
+                <a href="#" class="text-light fs-2 me-3"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-light fs-2"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
           </div>
+
+          <!-- Contact Column -->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">Contact Details</h5>
+            <ul class="list-unstyled d-flex flex-column gap-3">
+              <li>
+                <i class="bi bi-house fs-6 fs-sm-5 fs-md-4 fs-lg-3"> Unit # 20, 1625 Steeles Ave E </br> Brampton, ON L6T 4T7</i>
+              </li>
+              <li>
+                <i class="bi bi-envelope fs-6 fs-sm-5 fs-md-4 fs-lg-3"> parambrar675@gmail.com</i>
+              </li>
+              <li>
+                <i class="bi bi-phone fs-6 fs-sm-5 fs-md-4 fs-lg-3"> +1 (905) 902-8888</i>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Opening Hours Column -->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">Opening hours</h5>
+            <table class="table text-center text-white">
+              <tbody class="fw-normal">
+                <tr>
+                  <td>Monday - Friday:</td>
+                  <td>10:00am - 6:00pm</td>
+                </tr>
+                <tr>
+                  <td>Saturday:</td>
+                  <td>11:00am - 3:00pm</td>
+                </tr>
+                <tr>
+                  <td>Sunday:</td>
+                  <td>Closed</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
         </div>
-</div>
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          
-
-          <ul class="fa-ul" style="margin-left: 1.65em;">
-            <li class="mb-3">
-              <span class="fa-li"><i class="bi bi-house"></i></span><span class="ms-2">Unit # 20, 1625 Steeles Ave E Brampton, ON L6T 4T7</span>
-            </li>
-            <li class="mb-3">
-              <span class="fa-li"><i class="bi bi-envelope"></i></span><span class="ms-2">parambrar675@gmail.com</span>
-            </li>
-            <li class="mb-3">
-              <span class="fa-li"><i class="bi bi-phone"></i></span><span class="ms-2">+1 (905) 902-8888
-</span>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Opening hours</h5>
-
-          <table class="table text-center text-white">
-            <tbody class="fw-normal">
-              <tr>
-                <td>Monday - Friday:</td>
-                <td>10:00am - 6:00pm</td>
-              </tr>
-              <tr>
-                <td>Saturday:</td>
-                <td>11:00am - 3:00pm</td>
-              </tr>
-              <tr>
-                <td>Sunday:</td>
-                <td>Closed</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!--Grid column-->
+        <!--Grid row-->
       </div>
-      <!--Grid row-->
-    </div>
-    <!-- Grid container -->
+      <!-- Grid container -->
 
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2026 Copyright:
-      <a class="text-white" href="https://a5financial.ca">A5 Financial LTD</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.15);">
+        © 2026 Copyright:
+        <a class="text-white" href="https://a5financial.ca">A5 Financial LTD</a>
+      </div>
+    </footer>
+  </div>
+</footer>
 
 </div>
 <!-- End of .container -->
