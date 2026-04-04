@@ -160,17 +160,14 @@
 <!-- Contact Information Section -->
 <section class="container my-5">
   <div class="row">
-    <!-- Contact Details -->
     <div class="col-md-6 mb-4">
       <h4 style="color: #B87333;">Our Office</h4>
       <div class="contact-info" style="color: #0078B9; font-weight: 500;">
-        <p><i class="bi bi-geo-alt"></i> Unit # 20, 1625 Steeles Ave E </br> Brampton, ON L6T 4T7</p>
+        <p><i class="bi bi-geo-alt"></i> Unit # 20, 1625 Steeles Ave E Brampton, ON L6T 4T7</p>
         <p><i class="bi bi-telephone"></i> +1 (905) 902-8888</p>
         <p><i class="bi bi-envelope"></i> parambrar675@gmail.com</p>
       </div>
     </div>
-
-    <!-- Google Map -->
     <div class="col-md-6 mb-4">
       <h4 style="color: #B87333;">Find Us on the Map</h4>
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.6210598472912!2d-79.69954772488667!3d43.697640849556954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3e7d30e69fbd%3A0xb3d3b35bf46a715!2s1625%20Steeles%20Ave%20E%20%2320%2C%20Brampton%2C%20ON%20L6T%204T7%2C%20Canada!5e0!3m2!1sen!2s!4v1772215668986!5m2!1sen!2s" width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy"></iframe>
@@ -183,20 +180,25 @@
   <h4 class="text-center mb-4" style="color: #B87333;">Send Us a Message</h4>
   <form class="contact-form">
     <div class="row g-3">
-      <div class="col-md-6">
-        <input type="text" class="form-control form-input" placeholder="Full Name" required>
+      <div class="col-md-6 form-group">
+        <input type="text" class="form-control floating-input" placeholder=" " required>
+        <label>Full Name</label>
       </div>
-      <div class="col-md-6">
-        <input type="tel" class="form-control form-input" placeholder="Phone Number" required>
+      <div class="col-md-6 form-group">
+        <input type="tel" class="form-control floating-input" placeholder=" " required>
+        <label>Phone Number</label>
       </div>
-      <div class="col-md-6">
-        <input type="email" class="form-control form-input" placeholder="Email Address" required>
+      <div class="col-md-6 form-group">
+        <input type="email" class="form-control floating-input" placeholder=" " required>
+        <label>Email Address</label>
       </div>
-      <div class="col-md-6">
-        <input type="text" class="form-control form-input" placeholder="Subject" required>
+      <div class="col-md-6 form-group">
+        <input type="text" class="form-control floating-input" placeholder=" " required>
+        <label>Subject</label>
       </div>
-      <div class="col-md-12">
-        <textarea class="form-control form-input" rows="5" placeholder="Your Message" required></textarea>
+      <div class="col-md-12 form-group">
+        <textarea class="form-control floating-input" rows="5" placeholder=" " required></textarea>
+        <label>Your Message</label>
       </div>
       <div class="col-md-12 text-center">
         <button type="submit" class="btn btn-submit">Send Message</button>
@@ -206,27 +208,49 @@
 </section>
 
 <style>
-/* Interactive form styling */
-.form-input {
+/* Floating label input styles */
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.floating-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
   border: 2px solid #B87333;
   border-radius: 8px;
-  padding: 0.75rem 1rem;
-  transition: all 0.3s ease;
-  color: #fff;
   background-color: #0078B9;
-}
-
-.form-input::placeholder {
-  color: rgba(255,255,255,0.8);
-}
-
-.form-input:focus {
+  color: #fff;
   outline: none;
+  transition: all 0.3s ease;
+}
+
+.floating-input:focus {
   border-color: #0078B9;
   background-color: #B87333;
   box-shadow: 0 0 8px rgba(184,115,51,0.6);
 }
 
+.floating-input:focus + label,
+.floating-input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 12px;
+  font-size: 0.85rem;
+  color: #fff;
+  background-color: transparent;
+}
+
+label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: rgba(255,255,255,0.7);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Submit button animation */
 .btn-submit {
   background-color: #B87333;
   color: #fff;
@@ -239,9 +263,27 @@
 
 .btn-submit:hover {
   background-color: #0078B9;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 120, 185, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 120, 185, 0.5);
+}
+
+/* Section header text animation (fade in) */
+.section-header h2, .section-header p {
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+.section-header h2 {
+  animation-delay: 0.2s;
+}
+
+.section-header p {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px);}
+  100% { opacity: 1; transform: translateY(0);}
 }
 </style>
 
